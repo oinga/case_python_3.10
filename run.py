@@ -9,12 +9,13 @@ cursor = mydb.cursor()
 cursor.execute("""SELECT artist, title FROM music""")
 results_data = cursor.fetchall()
 for data in results_data:
-        music_row = list(data)
-        for elements in music_row:
-            match elements:
-                case 'Dru Hill':
-                    print(music_row)
-                case 'DMX':
-                    print(music_row)    
+    for elements in data:
+        match elements:
+            case 'Dru Hill':
+                print("Artist: " + data[0] + " | " + " Song: " + data[1]) 
+            case 'DMX':
+                print("Artist: " + data[0] + " | " + " Song: " + data[1]) 
+            case 'Boyz II Men':
+                print("Artist: " + data[0] + " | " + " Song: " + data[1])       
    
 
